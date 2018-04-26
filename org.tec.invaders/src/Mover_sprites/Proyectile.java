@@ -1,14 +1,11 @@
-package listas;
+package Mover_sprites;
 
 import java.awt.Image;
 
 import javax.swing.ImageIcon;
 
-
-import Mover_sprites.copy.Nave;
-
-public class EnemigoD extends Nave{
-	private String metroid = "C:\\Users\\Ba\\Desktop\\Sprites\\metroid.gif";
+public class Proyectile {
+	private String misil = "C:\\Users\\Ba\\Desktop\\Sprites\\misil.png";
 	private int dx1;
 	private int dy1;
 	private int dx2;
@@ -22,19 +19,18 @@ public class EnemigoD extends Nave{
 
 	private Image image;
 
-	public EnemigoD() {
-		ImageIcon image_icon = new ImageIcon(metroid);
+	public Proyectile(int x1, int y1, int x2, int y2) {
+		ImageIcon image_icon = new ImageIcon(misil);
 		image = image_icon.getImage();
 
-		this.dx1 = 1045;
-		this.dx2 = 1095;
-		this.dy1 = 0;
-		this.dy2 = 50;
-
+		this.dx1 = x1 + 36;
+		this.dx2 = x2 - 34;
+		this.dy1 = y1 - 30;
+		this.dy2 = y2 - 75;
 		this.sx1 = 0;
-		this.sx2 = 50;
+		this.sx2 = 10;
 		this.sy1 = 0;
-		this.sy2 = 50;
+		this.sy2 = 38;
 		this.contadorL = 1045;
 		this.contadorR = 0;
 
@@ -134,8 +130,5 @@ public class EnemigoD extends Nave{
 	public Image getImage() {
 		return image;
 	}
-	
-
 
 }
-

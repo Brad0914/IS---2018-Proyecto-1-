@@ -17,6 +17,7 @@ public class Escenario extends JPanel implements ActionListener {
 	private static final long serialVersionUID = 1L;
 	private Timer timer;
 	private Nave nave;
+	private Proyectile misil;
 	private enemigoPrueba enemy;
 	private String escenario = "C:\\Users\\Ba\\Desktop\\Sprites\\Background.png";
 	public ImageIcon image_icon;
@@ -32,6 +33,7 @@ public class Escenario extends JPanel implements ActionListener {
 
 		this.enemy = new enemigoPrueba();
 		this.nave = new Nave();
+		this.misil = new Proyectile(nave.getDx1(), nave.getDy1(), nave.getDx2(), nave.getDy2());
 		this.timer = new Timer(5, this);
 		this.timer.start();
 	}
@@ -41,14 +43,16 @@ public class Escenario extends JPanel implements ActionListener {
 
 		Graphics2D g2d = (Graphics2D) g;
 		g2d.drawImage(image_icon.getImage(), 0, 0, this);
-		g2d.drawImage(nave.getImage(), nave.getDx1(), nave.getDy1(), nave.getDx2(), nave.getDy2(), nave.getSx1(),
+		g2d.drawImage(nave.getImageN(), nave.getDx1(), nave.getDy1(), nave.getDx2(), nave.getDy2(), nave.getSx1(),
 				nave.getSy1(), nave.getSx2(), nave.getSy2(), this);
 		g2d.drawImage(enemy.getImage(), enemy.getDx1(), enemy.getDy1(), enemy.getDx2(), enemy.getDy2(), enemy.getSx1(), 
 				enemy.getSy1(), enemy.getSx2(), enemy.getSy2(), this); 
+		g2d.drawImage(misil.getImage(), misil.getDx1(), misil.getDy1(), misil.getDx2(), misil.getDy2(), misil.getSx1(), 
+				misil.getSy1(), misil.getSx2(), misil.getSy2(), this); 
 		Toolkit.getDefaultToolkit().sync();
 		g.dispose();
 	}
-
+ 
 	public void actionPerformed(ActionEvent e) {
 		nave.move();
 		enemy.move();

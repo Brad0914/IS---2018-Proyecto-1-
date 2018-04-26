@@ -28,6 +28,7 @@ public class enemigoPrueba {
 		this.dx2 = 1095;
 		this.dy1 = 0;
 		this.dy2 = 50;
+
 		this.sx1 = 0;
 		this.sx2 = 50;
 		this.sy1 = 0;

@@ -12,7 +12,7 @@ public class Lista {
 	/**
 	 * constructor 
 	 */
-	public Lista(String nombre) {
+	public Lista() {
 		this.primero = null;
 
 	}
