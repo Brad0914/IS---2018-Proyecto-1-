@@ -3,17 +3,17 @@ package listas;
 public class NodoDC {
 		private NodoDC siguiente; 
 		private NodoDC anterior;
-		private EnemigoDC valor;
+		private Enemigo valor;
 
 
-		public NodoDC(EnemigoDC valor) {
+		public NodoDC(Enemigo valor) {
 
 			this.valor = valor;
 		}
 
 
 
-		public NodoDC(EnemigoDC valor, NodoDC siguiente, NodoDC anterior) {
+		public NodoDC(Enemigo valor, NodoDC siguiente, NodoDC anterior) {
 			this.valor = valor;
 			this.siguiente = siguiente;
 			this.anterior = anterior;
@@ -36,11 +36,11 @@ public class NodoDC {
 			this.anterior = anterior;
 		}
 
-		public EnemigoDC getValor() {
+		public Enemigo getValor() {
 			return valor;
 		}
 
-		public void setValor(EnemigoDC valor) {
+		public void setValor(Enemigo valor) {
 			this.valor = valor;
 		}
 	}

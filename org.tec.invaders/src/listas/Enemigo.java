@@ -4,8 +4,8 @@ import java.awt.Image;
 
 import javax.swing.*;
 
-import Mover_sprites.copy.Nave;
-import Mover_sprites.copy.Proyectile;
+import invaders.Nave;
+import invaders.Proyectile;
 
 
 public class Enemigo extends Nave{ 
@@ -23,40 +23,22 @@ public class Enemigo extends Nave{
 	private int sy2;
 	private int contadorL;
 	private int contadorR;
+	
+	private boolean win = false;
+	private boolean lose = false;
 
 	private boolean boss;
+
+	private boolean bossChange;
 	
 	private Image image;
-
-	public Enemigo(Proyectile proyectil) {
-		ImageIcon image_icon = new ImageIcon(metroid);
-		image = image_icon.getImage();
-
-		this.dx1 = 1045;
-		this.dx2 = 1095;
-		this.dy1 = 0;
-		this.dy2 = 50;
-		
-		this.boss = false;
-
-		this.sx1 = 0;
-		this.sx2 = 50;
-		this.sy1 = 0;
-		this.sy2 = 50;
-		this.contadorL = 1045;
-		this.contadorR = 0;
-		this.Vida = 1;
-		this.proyectil = proyectil;
-		
-
-	}
 	
-	public Enemigo(Proyectile proyectil, String string) {
+	public Enemigo(Proyectile proyectil, int vida) {
 		ImageIcon image_icon = new ImageIcon(metroid);
 		image = image_icon.getImage();
 
-		this.dx1 = 1045;
-		this.dx2 = 1095;
+		this.dx1 = 1180;
+		this.dx2 = 1230;
 		this.dy1 = 88;
 		this.dy2 = 138;
 		
@@ -68,22 +50,24 @@ public class Enemigo extends Nave{
 		this.sy2 = 50;
 		this.contadorL = 1045;
 		this.contadorR = 0;
-		this.Vida = 1;
+		this.Vida = vida;
 		this.proyectil = proyectil;
 		
 
 	}
 	
-	public Enemigo(Proyectile proyectil, boolean boss) {
+	 
+	public Enemigo(Proyectile proyectil, boolean boss, boolean bossChange) {
 		ImageIcon image_icon = new ImageIcon(bossMetroid);
 		image = image_icon.getImage();
-
-		this.dx1 = 1045;
-		this.dx2 = 1095;
+		
 		this.dy1 = 0;
 		this.dy2 = 138;
 
 		this.boss = boss;
+		this.bossChange = bossChange;
+		
+	
 		
 		this.sx1 = 0;
 		this.sx2 = 125;
@@ -112,28 +96,6 @@ public class Enemigo extends Nave{
 		}
 	}
 
-//	public void moveNoBoss() {
-//
-//		if (this.contadorL > 360) {
-//			this.dx1 -= 1;
-//			this.dx2 -= 1;
-//			this.contadorL -= 1;
-//		}
-//
-//		else if (this.contadorR < 685) {
-//			this.dx1 += 1;
-//			this.dx2 += 1;
-//			this.contadorR += 1;
-//		}
-//
-//		else {
-//			this.contadorL = 1045;
-//			this.contadorR = 0;
-//			this.dy1 += 20;
-//			this.dy2 += 20;
-//		}
-//
-//	}
 	
 	public void moveBoss(int mov) {
 
@@ -157,6 +119,7 @@ public class Enemigo extends Nave{
 		}
 
 	}
+	
 
 	public Proyectile getProyectil() {
 		return proyectil;
@@ -242,6 +205,39 @@ public class Enemigo extends Nave{
 	}
 	public void setBoss(boolean boss) {
 		this.boss = boss;
+	}
+
+	public boolean isBossChange() {
+		return bossChange;
+	}
+
+	public void setBossChange(boolean bossChange) {
+		this.bossChange = bossChange;
+	}
+
+
+	public void setImage(Image image) {
+		this.image = image;
+	}
+
+
+	public boolean isWin() {
+		return win;
+	}
+
+
+	public void setWin(boolean win) {
+		this.win = win;
+	}
+
+
+	public boolean isLose() {
+		return lose;
+	}
+
+
+	public void setLose(boolean lose) {
+		this.lose = lose;
 	}
 	
 

@@ -1,14 +1,16 @@
-package listas;
+package invaders;
+
 
 import java.awt.Image;
+
+import java.awt.event.KeyEvent;
 
 import javax.swing.ImageIcon;
 
 
-import Mover_sprites.copy.Nave;
+public class Nave {
+	private String nave = "C:\\Users\\Ba\\Desktop\\Sprites\\nave.png";
 
-public class EnemigoD extends Nave{
-	private String metroid = "C:\\Users\\Ba\\Desktop\\Sprites\\metroid.gif";
 	private int dx1;
 	private int dy1;
 	private int dx2;
@@ -17,55 +19,37 @@ public class EnemigoD extends Nave{
 	private int sy1;
 	private int sx2;
 	private int sy2;
-	private int contadorL;
-	private int contadorR;
+	private int movement;
 
-	private Image image;
+	private Image imageN;
 
-	public EnemigoD() {
-		ImageIcon image_icon = new ImageIcon(metroid);
-		image = image_icon.getImage();
 
-		this.dx1 = 1045;
-		this.dx2 = 1095;
-		this.dy1 = 0;
-		this.dy2 = 50;
-
+	public Nave() {
+		ImageIcon image1 = new ImageIcon(nave);
+		imageN = image1.getImage();
+	
+		this.dx1 = 507;
+		this.dx2 = 588;
+		this.dy1 = 610;
+		this.dy2 = 700;
 		this.sx1 = 0;
-		this.sx2 = 50;
+		this.sx2 = 81;
 		this.sy1 = 0;
-		this.sy2 = 50;
-		this.contadorL = 1045;
-		this.contadorR = 0;
+		this.sy2 = 90;
 
 	}
-
+ 
 	public void move() {
-		
-		if (this.contadorL > 0) {
-			this.dx1 -=1;
-			this.dx2 -=1;
-			this.contadorL -=1;
+
+		if (this.movement > 0 && this.dx2 < 1090) {
+			this.dx1 += this.movement;
+			this.dx2 += this.movement;
+		} else if (this.movement < 0 && this.dx1 > 0) {
+			this.dx1 += this.movement;
+			this.dx2 += this.movement;
 		}
 
-		else if (this.contadorR < 1045) {
-			this.dx1 += 1;
-			this.dx2 += 1;
-			this.contadorR += 1;
-		}
-
-		else {
-			this.contadorL = 1045;
-			this.contadorR = 0;
-			this.dy1 += 20;
-			this.dy2 += 20;
-		}
-		
-
-		
-		
-		}
-	
+	}
 
 	public int getDx1() {
 		return dx1;
@@ -131,11 +115,38 @@ public class EnemigoD extends Nave{
 		this.sy2 = sy2;
 	}
 
-	public Image getImage() {
-		return image;
+	public Image getImageN() {
+		return imageN;
 	}
+
+
+
+	public void keyPressed(KeyEvent e) {
+		int key = e.getKeyCode();
+
+		if (key == KeyEvent.VK_RIGHT) {
+			this.movement = 2;
+
+		}
+		if (key == KeyEvent.VK_LEFT) {
+			this.movement = -2;
+
+		}
+	}
+
+	public void keyReleased(KeyEvent e) {
+		int key = e.getKeyCode();
+
+		if (key == KeyEvent.VK_RIGHT) {
+			this.movement = 0;
+
+		}
+		if (key == KeyEvent.VK_LEFT) {
+			this.movement = 0;
+
+		}
+
+	}
+
 	
-
-
 }
-

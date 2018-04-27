@@ -1,4 +1,4 @@
-package Mover_sprites.copy;
+package invaders;
 
 import java.awt.Image;
 
@@ -77,11 +77,6 @@ public class Proyectile extends Nave {
 
 	}
 	
-		
-		
-
-	
-
 	public void setDx1Inicial(int dx1Inicial) {
 		this.dx1Inicial = dx1Inicial;
 	}
@@ -181,11 +176,11 @@ public class Proyectile extends Nave {
 			this.shot = true;
 		}
 		if (key == KeyEvent.VK_RIGHT) {
-			this.movement = 1;
+			this.movement = 2;
  
 		}
 		if (key == KeyEvent.VK_LEFT) {
-			this.movement = -1;
+			this.movement = -2;
 
 		}
 		

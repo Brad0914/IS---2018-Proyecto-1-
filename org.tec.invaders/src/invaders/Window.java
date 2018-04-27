@@ -1,15 +1,16 @@
-package Mover_sprites;
+package invaders;
 
 import javax.swing.JFrame;
+import javax.swing.JPanel;
 
-public class MoverSprites extends JFrame {
+public class Window extends JFrame {
 
 	private static final long serialVersionUID = 1L;
 	private static JFrame window;
 
-	public MoverSprites() {
+	public Window(JPanel scene) {
 		window = new JFrame("Invaders");
-		window.add(new Escenario());
+		window.add(scene); 
 		window.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		window.setSize(1095, 730);
 		window.setLocationRelativeTo(null);

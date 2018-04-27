@@ -13,7 +13,7 @@ public class ListaDC {
 
 	
 
-	public ListaDC(String nombre) {
+	public ListaDC() {
 		this.primero = null;
 		this.ultimo = null;
 		
@@ -31,7 +31,7 @@ public class ListaDC {
 		return ultimo;
 	}
 
-	public void insertarFinal(EnemigoDC valor) {
+	public void insertarFinal(Enemigo valor) {
 		if (this.ultimo == null) {
 			this.ultimo = new NodoDC(valor);
 			this.primero = this.ultimo;
@@ -102,7 +102,7 @@ public class ListaDC {
 			actual = actual.getAnterior();
 		}
 	}
-	public void insertarInicio (EnemigoDC valor) {
+	public void insertarInicio (Enemigo valor) {
 		if (this.primero == null) {
 			this.primero = new NodoDC(valor);
 			this.ultimo = this.primero;

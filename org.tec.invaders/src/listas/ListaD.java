@@ -14,7 +14,7 @@ public class ListaD {
 /**
   * constructor
   */
-	public ListaD(String nombre) {
+	public ListaD() {
 		this.primero = null; 
 		this.ultimo = null;
 	}
@@ -48,7 +48,7 @@ public class ListaD {
 	 * inserta al final y enlaza doble la lista
 	 * @param valor
 	 */
-	public void insertarFinal(EnemigoD valor) {
+	public void insertarFinal(Enemigo valor) {
 		if (this.ultimo == null) {
 			this.ultimo = new NodoD(valor);
 			this.primero = this.ultimo;
@@ -129,7 +129,7 @@ public class ListaD {
 	  * inserta al inicio y enlaza doble la lista
 	  * @param valor
 	  */
-	public void insertarInicio (EnemigoD valor) {
+	public void insertarInicio (Enemigo valor) {
 		if (this.primero == null) {
 			this.primero = new NodoD(valor);
 			this.ultimo = this.primero;

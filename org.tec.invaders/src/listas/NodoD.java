@@ -3,15 +3,15 @@ package listas;
 public class NodoD {
 	private NodoD siguiente;
 	private NodoD Anterior;
-	private EnemigoD valor;
+	private Enemigo valor;
 
 
-	public NodoD(EnemigoD valor) {
+	public NodoD(Enemigo valor) {
 
 		this.valor = valor;
 	}
 	
-	public NodoD(EnemigoD valor, NodoD siguiente, NodoD Anterior) {
+	public NodoD(Enemigo valor, NodoD siguiente, NodoD Anterior) {
 	this.valor = valor;
 	this.siguiente = siguiente;  
 	this.Anterior = Anterior;
@@ -30,10 +30,10 @@ public class NodoD {
 	public void setAnterior(NodoD anterior) {
 		Anterior = anterior;
 	}
-	public EnemigoD getValor() {
+	public Enemigo getValor() {
 		return valor;
 	}
-	public void setValor(EnemigoD valor) {
+	public void setValor(Enemigo valor) {
 		this.valor = valor;
 	}
 }

@@ -1,4 +1,4 @@
-package Mover_sprites.copy;
+package invaders;
 
 import java.awt.event.KeyAdapter;
 import java.awt.event.KeyEvent;
